@@ -10,7 +10,6 @@ function Login(props) {
   const [newUser, setNewUser] = useState([]);
 
   const handleSubmit = event => {
-    console.log(newUser);
     event.preventDefault();
     axios.post(loginApi, newUser)
       .then(res => {

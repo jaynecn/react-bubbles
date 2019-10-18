@@ -26,9 +26,6 @@ const ColorList = ({ colors, updateColors }) => {
     // think about where will you get the id from...
     // where is is saved right now?
     const newColor = colorToEdit;
-    console.log(newColor);
-    console.log(colorToEdit);
-    console.log(colorToEdit.id);
     axiosWithAuth().put(
       `${colorsURL}/${colorToEdit.id}`, newColor)
       .then(res => {
@@ -39,7 +36,6 @@ const ColorList = ({ colors, updateColors }) => {
   };
 
   const deleteColor = color => {
-    console.log(color);
     axiosWithAuth().delete(
       `${colorsURL}/${colorToEdit.id}`)
       .then(res => {

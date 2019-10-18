@@ -12,6 +12,7 @@ const ColorList = ({ colors, updateColors }) => {
   const [colorToEdit, setColorToEdit] = useState(initialColor);
 
   const editColor = color => {
+    console.log(color);
     setEditing(true);
     setColorToEdit(color);
   };
@@ -21,6 +22,8 @@ const ColorList = ({ colors, updateColors }) => {
     // Make a put request to save your updated color
     // think about where will you get the id from...
     // where is is saved right now?
+    console.log(colorToEdit);
+    
   };
 
   const deleteColor = color => {

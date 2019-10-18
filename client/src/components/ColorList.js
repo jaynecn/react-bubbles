@@ -32,13 +32,19 @@ const ColorList = ({ colors, updateColors }) => {
     axiosWithAuth().put(
       `${colorsURL}/${colorToEdit.id}`, newColor)
       .then(res => {
-        console.log(colors);
+        setColorToEdit(initialColor);
       })
 
     
   };
 
   const deleteColor = color => {
+    console.log(color);
+    axiosWithAuth().delete(
+      `${colorsURL}/${colorToEdit.id}`)
+      .then(res => {
+        console.log(`color ${colorToEdit.color} has been deleted. Please refresh the page to see changes.`);
+      })
     // make a delete request to delete this color
   };
 
